@@ -257,7 +257,7 @@ bayesmetab <- function(data.dir, results.dir, interval, n.iter=20000, n.burnin=n
       }
       
       # diagnostic traceplots and scatterplots
-      jpeg(file=file.path(results.dir, paste0(substr(fname, 1,(nchar(fname)-4)),"_", as.character(d), "_1_trace_", gsub(":","",Sys.time()), ".jpg")), width=1200, height=1200, pointsize=30, quality=300)
+      jpeg(file=file.path(results.dir, paste0(substr(fname, 1,(nchar(fname)-4)),"_", as.character(d), "_1_trace_", gsub(":","",Sys.time()), ".jpg")), width=1200, height=1200, pointsize=30, quality=80)
       
       par(mfrow=c(3,3), mar=c(3,4,2,1), oma=c(0.1,0.1,0.1,0.1))
       traceplot(metabfit, varname=c('A','p','R','K.day','theta'), ask=FALSE, mfrow=c(3,3), new=FALSE)
@@ -279,7 +279,7 @@ bayesmetab <- function(data.dir, results.dir, interval, n.iter=20000, n.burnin=n
       graphics.off()
       
       # diagnostic density plots
-      jpeg(file=file.path(results.dir, paste0(substr(fname, 1,(nchar(fname)-4)),"_", as.character(d), "_2_density_", gsub(":","",Sys.time()), ".jpg")), width=1200, height=1200, pointsize=30, quality=300)
+      jpeg(file=file.path(results.dir, paste0(substr(fname, 1,(nchar(fname)-4)),"_", as.character(d), "_2_density_", gsub(":","",Sys.time()), ".jpg")), width=1200, height=1200, pointsize=30, quality=80)
 
       print(lattice::densityplot(metabfit.mcmc[,c("theta", "K.day", "p", "A", "ER", "GPP")]))
 
